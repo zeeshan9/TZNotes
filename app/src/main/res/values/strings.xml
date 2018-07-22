@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TZ Notes</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
 </resources>
