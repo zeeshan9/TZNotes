@@ -27,12 +27,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mNotesTxt=(TextView) findViewById(R.id.feather);
+        mNotesTxt=(TextView) findViewById(R.id.notes_txt_id);
         mNotesTxt.setClickable(true);
+
+        mNotesTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,NotesActivity.class);
+                startActivity(intent);
+            }
+        });
 
 //       mNotesTxt.setOnClickListener();
 
-//        mToDoList=(TextView) findViewById(R.id.todolist_txt_id);
+        mToDoList=(TextView) findViewById(R.id.todolist_txt_id);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mActionBarDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.Open,R.string.Close);
 

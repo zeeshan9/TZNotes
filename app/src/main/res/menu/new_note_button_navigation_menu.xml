@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/align_item"
+        android:icon="@drawable/align_vector"
+        android:title="Align"/>
+
+    <item
+        android:id="@+id/bold_item"
+        android:icon="@drawable/bold_vector"
+        android:title="Bold"/>
+
+    <item
+        android:id="@+id/italic_item"
+        android:icon="@drawable/italic_vector"
+        android:title="Italic"/>
+
+    <item
+        android:id="@+id/underline_item"
+        android:icon="@drawable/underline_vector"
+        android:title="Underline"/>
+
+    <item
+        android:id="@+id/color_item"
+        android:icon="@drawable/color_vector"
+        android:title="Color"/>
+
+</menu>
