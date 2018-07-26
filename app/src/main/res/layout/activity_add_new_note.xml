@@ -17,6 +17,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/note_title_edit_txt"
             android:padding="10dp"
             android:layout_margin="5dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -30,6 +31,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textStyle="normal"
+            android:id="@+id/note_detail_edit_txt"
             android:inputType="textMultiLine"
             android:layout_margin="5dp"
             android:textAppearance="?android:attr/textAppearanceMedium"

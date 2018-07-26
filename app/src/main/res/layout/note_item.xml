@@ -12,7 +12,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:padding="5dp"
         android:id="@+id/title_text_view"
-        android:text="Tahir"
+
         android:textStyle="bold"/>
 
     <TextView
@@ -21,7 +21,7 @@
         android:id="@+id/detail_overview_text_view"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:padding="5dp"
-        android:text="Tahir"
+
         />
 
 </LinearLayout>

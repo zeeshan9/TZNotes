@@ -1,6 +1,7 @@
 package com.example.dell.tznotes.Controller.Notes;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,17 +10,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.example.dell.tznotes.Model.NotesContractProviderModel;
 import com.example.dell.tznotes.R;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
 
-    String[] names = {"Tahir","Zeeshan","Ali"};
-    String[] courses = {"SE","CS","EE"};
+
+    Cursor mCursor;
 
 
-    public NotesAdapter(){
-
-
+    public NotesAdapter(Cursor cursor){
+        mCursor = cursor;
     }
 
     @NonNull
@@ -41,7 +42,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
     @Override
     public int getItemCount() {
-        return names.length;
+        return mCursor.getCount();
     }
 
     class NotesViewHolder extends RecyclerView.ViewHolder{
@@ -54,9 +55,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             detailOverviewTextView = (TextView) itemView.findViewById(R.id.detail_overview_text_view);
         }
         void bind(int listIndex){
+            if(mCursor!=null){
+                mCursor.moveToPosition(0);
+                mCursor.moveToPosition(listIndex);
 
-            titleTextView.setText(names[listIndex]);
-            detailOverviewTextView.setText(courses[listIndex]);
+                titleTextView.setText(mCursor.getString(mCursor.getColumnIndex(NotesContractProviderModel.NotesClass.COLUMN_NOTE_TITLE)));
+                detailOverviewTextView.setText(mCursor.getString(mCursor.getColumnIndex(NotesContractProviderModel.NotesClass.COLUMN_NOTE_DETAILS)));
+
+                mCursor.moveToPosition(0);
+            }
+
+
 
         }
     }

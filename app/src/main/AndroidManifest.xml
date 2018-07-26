@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".Model.NotesProviderModel"
+            android:authorities="com.example.dell.tznotes.Model"
+            android:exported="false" />
+
         <activity android:name=".AddNewNoteActivity" />
         <activity android:name=".NotesActivity"></activity>
     </application>
