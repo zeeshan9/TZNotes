@@ -14,8 +14,11 @@ public class NotesContractProviderModel {
     // make the constructor private.
     private NotesContractProviderModel(Context context) {}
 
+    public static final String PATH_ALARM = AlarmTable.TABLE_NAME;
+
     /* Inner class that defines the table contents */
     public static class NotesClass implements BaseColumns {
+
         public static final String TABLE_NAME = "Notes";
         public static final String _id = BaseColumns._ID;
         public static final String COLUMN_NOTE_TITLE = "note_title";
@@ -27,6 +30,20 @@ public class NotesContractProviderModel {
         public static final String PATH_ACCOUNT = TABLE_NAME;
 
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_ACCOUNT);
+
+    }
+
+    public static final class AlarmTable implements BaseColumns
+    {
+        public static final Uri CONTENT_URI_ALARM_TABLE = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_ALARM);
+
+        public static final String TABLE_NAME = "alarm";
+
+        public static final String ALARM_ID = BaseColumns._ID;
+        public static final String DATE_COLUMN = "date";
+        public static final String TIME_COLUMN = "time";
+        public static final String CONTENTDISCRIPTION_COLUMN = "contentdiscription";
+
 
     }
 
