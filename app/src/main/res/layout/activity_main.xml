@@ -6,8 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity"
     >
-
-
     <android.support.v4.widget.DrawerLayout
 
         android:id="@+id/drawer_layout"
@@ -131,7 +129,7 @@
                                         android:layout_marginEnd="20dp"
                                         android:layout_marginStart="20dp"
                                         android:layout_marginTop="20dp"
-                                        android:background="@drawable/circle"
+                                        android:background="@drawable/change_image"
                                         android:gravity="center"
                                         android:text="TextView"
                                         android:textColor="#FFFFFF"
@@ -170,20 +168,18 @@
 
 
                                     <TextView
-                                        android:id="@+id/textView14"
+                                        android:id="@+id/alarm_txt_id"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="20dp"
                                         android:layout_marginEnd="20dp"
                                         android:layout_marginStart="20dp"
                                         android:layout_marginTop="20dp"
-                                        android:text="TextView"
-                                        android:gravity="center"
-                                        android:textColor="#FFFFFF"
+                                        android:background="@drawable/change_image"
                                         android:clickable="true"
-                                        android:focusable="true"
-                                        android:focusableInTouchMode="true"
-                                        android:background="@drawable/circle"
+                                        android:gravity="center"
+                                        android:text="Alarm"
+                                        android:textColor="#FFFFFF"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -327,5 +323,7 @@
 
 
     </android.support.v4.widget.DrawerLayout>
+
+
 
 </RelativeLayout>

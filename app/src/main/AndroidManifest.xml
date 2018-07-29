@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dell.tznotes">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,7 +26,13 @@
             android:exported="false" />
 
         <activity android:name=".AddNewNoteActivity" />
-        <activity android:name=".NotesActivity"></activity>
+        <activity android:name=".NotesActivity" />
+        <activity android:name=".Alarm"></activity>
+
+        <receiver
+            android:name=".Controller.Notes.AlarmReceiverController"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
