@@ -12,12 +12,14 @@ import android.widget.Toast;
 
 import com.example.dell.tznotes.Controller.Notes.AlarmReceiverController;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Alarm extends AppCompatActivity {
 
     TimePicker timePicker;
-
+    ArrayList<PendingIntent> intentArray;
+    public static int i;
     long alarm_time;
 
     @Override
@@ -104,6 +106,22 @@ public class Alarm extends AppCompatActivity {
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, timeinMilllis, AlarmManager.INTERVAL_DAY,
                 pendingIntent);
+
+//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//
+//        intentArray = new ArrayList<PendingIntent>();
+//
+//        for( i = 0; i < 10; ++i)
+//        {
+//            Intent intent = new Intent(this, Alarm.class);
+//            // Loop counter `i` is used as a `requestCode`
+//            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, i, intent, 0);
+//
+//            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, timeinMilllis, AlarmManager.INTERVAL_DAY,
+//                pendingIntent);
+//
+//            intentArray.add(pendingIntent);
+//        }
 
         Toast.makeText(this, "Alarm is set", Toast.LENGTH_SHORT).show();
 

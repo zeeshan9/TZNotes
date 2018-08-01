@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,12 +26,14 @@
 
         <activity android:name=".AddNewNoteActivity" />
         <activity android:name=".NotesActivity" />
-        <activity android:name=".Alarm"></activity>
+        <activity android:name=".Alarm" />
 
         <receiver
             android:name=".Controller.Notes.AlarmReceiverController"
             android:enabled="true"
             android:exported="true" />
+
+        <activity android:name=".PictureStory"></activity>
     </application>
 
 </manifest>
