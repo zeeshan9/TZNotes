@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView mNavigationView;
     TextView mNotesTxt,mToDoList,mAlarmTxt,mPictureStory;
     AppCompatImageView appCompatImageView;
-
     public static boolean mMyAlarm=false;
 
     @Override
