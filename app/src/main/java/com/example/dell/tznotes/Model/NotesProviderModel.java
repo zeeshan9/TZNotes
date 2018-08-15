@@ -14,8 +14,6 @@ public class NotesProviderModel extends ContentProvider {
 
     private static final int NOTES = 100;
     private static final int NOTES_ID = 101;
-    private static final int ALARM=102;
-    private static final int ALARM_ID=103;
 
     private static final UriMatcher sUriMatcher  =new UriMatcher(UriMatcher.NO_MATCH);
 
@@ -24,14 +22,9 @@ public class NotesProviderModel extends ContentProvider {
     static{
         sUriMatcher.addURI(NotesContractProviderModel.CONTENT_AUTHORITY,
                 NotesContractProviderModel.NotesClass.PATH_ACCOUNT,NOTES);
-
         sUriMatcher.addURI(NotesContractProviderModel.CONTENT_AUTHORITY,
                 NotesContractProviderModel.NotesClass.PATH_ACCOUNT+"/#",NOTES_ID);
 
-        sUriMatcher.addURI(NotesContractProviderModel.CONTENT_AUTHORITY,
-                NotesContractProviderModel.PATH_ALARM, ALARM);
-        sUriMatcher.addURI(NotesContractProviderModel.CONTENT_AUTHORITY,
-                NotesContractProviderModel.PATH_ALARM + "/#", ALARM_ID);
     }
 
 

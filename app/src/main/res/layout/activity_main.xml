@@ -131,7 +131,7 @@
                                         android:layout_marginTop="20dp"
                                         android:background="@drawable/change_image"
                                         android:gravity="center"
-                                        android:text="TextView"
+                                        android:text="To Do"
                                         android:textColor="#FFFFFF"
 
                                         app:layout_constraintBottom_toBottomOf="parent"
