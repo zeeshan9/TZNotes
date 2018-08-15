@@ -14,6 +14,8 @@ public class NotesProviderModel extends ContentProvider {
 
     private static final int NOTES = 100;
     private static final int NOTES_ID = 101;
+    private static final int TODO = 102;
+    private static final int TODO_ID = 103;
 
     private static final UriMatcher sUriMatcher  =new UriMatcher(UriMatcher.NO_MATCH);
 
@@ -24,6 +26,11 @@ public class NotesProviderModel extends ContentProvider {
                 NotesContractProviderModel.NotesClass.PATH_ACCOUNT,NOTES);
         sUriMatcher.addURI(NotesContractProviderModel.CONTENT_AUTHORITY,
                 NotesContractProviderModel.NotesClass.PATH_ACCOUNT+"/#",NOTES_ID);
+
+        sUriMatcher.addURI(NotesContractProviderModel.CONTENT_AUTHORITY,
+                NotesContractProviderModel.TodoClass.PATH_ACCOUNT,TODO);
+        sUriMatcher.addURI(NotesContractProviderModel.CONTENT_AUTHORITY,
+                NotesContractProviderModel.TodoClass.PATH_ACCOUNT+"/#",TODO_ID);
 
     }
 
@@ -56,6 +63,17 @@ public class NotesProviderModel extends ContentProvider {
                         projection, selection, selectionArgs, null, null, sortOrder);
                 break;
 
+            case TODO:
+                cursor = database.query(NotesContractProviderModel.TodoClass.TABLE_NAME,
+                        projection, selection, selectionArgs, null, null, sortOrder);
+                break;
+            case TODO_ID:
+                selection = NotesContractProviderModel.TodoClass._id + "=?";
+                selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
+                cursor = database.query(NotesContractProviderModel.TodoClass.TABLE_NAME,
+                        projection, selection, selectionArgs, null, null, sortOrder);
+                break;
+
             default:
                 cursor = null;
 
@@ -82,6 +100,11 @@ public class NotesProviderModel extends ContentProvider {
             case NOTES:
                 // Insert the new pet with the given values
                 id = database.insert(NotesContractProviderModel.NotesClass.TABLE_NAME
+                        , null, values);
+
+            case TODO:
+                // Insert the new pet with the given values
+                id = database.insert(NotesContractProviderModel.TodoClass.TABLE_NAME
                         , null, values);
 
             default:
