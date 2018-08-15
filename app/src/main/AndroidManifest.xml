@@ -33,7 +33,9 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".PictureStory"></activity>
+        <activity android:name=".AlertDialogClass"/>
+        <activity android:name=".PictureStory" />
+
     </application>
 
 </manifest>

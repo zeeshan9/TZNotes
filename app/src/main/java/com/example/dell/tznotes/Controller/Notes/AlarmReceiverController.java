@@ -15,6 +15,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.widget.Toast;
 import com.example.dell.tznotes.Alarm;
+import com.example.dell.tznotes.AlertDialogClass;
 import com.example.dell.tznotes.MainActivity;
 import com.example.dell.tznotes.R;
 
@@ -63,6 +64,16 @@ public class AlarmReceiverController extends BroadcastReceiver {
         notificationManager.notify(notificationId, mBuilder.build());
 
         Toast.makeText(context,"Alarm just Fired",Toast.LENGTH_SHORT).show();
+
+
+        //==================================================================
+        Intent alarmIntent = new Intent(context,AlertDialogClass.class);
+//        alarmIntent.setClass(ct, AlertDialogClass.class);
+        alarmIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(alarmIntent);
+
+        //==================================================================
+
     }
 
 
