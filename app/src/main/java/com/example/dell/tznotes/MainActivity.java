@@ -63,6 +63,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        mToDoList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ToDoActivity.class);
+                startActivity(intent);
+            }
+        });
+
         mAlarmTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

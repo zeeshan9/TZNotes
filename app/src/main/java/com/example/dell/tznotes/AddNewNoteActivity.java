@@ -114,7 +114,7 @@ public class AddNewNoteActivity extends AppCompatActivity implements BottomNavig
         switch (item.getItemId()) {
             case R.id.bold_item: {
                 Toast.makeText(this,"Bold",Toast.LENGTH_LONG).show();
-                
+
             }
             break;
             case R.id.italic_item: {
