@@ -28,6 +28,10 @@
         <activity android:name=".AddNewNoteActivity" />
         <activity android:name=".NotesActivity" />
         <activity android:name=".Alarm"></activity>
+        <activity android:name=".AlertDialogClass"></activity>
+        <activity android:name=".PictureStory"></activity>
+        <activity android:name=".ToDoActivity"></activity>
+        <activity android:name=".AddNewTodoActivity"></activity>
 
         <receiver
             android:name=".Controller.Notes.AlarmReceiverController"
