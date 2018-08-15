@@ -30,21 +30,4 @@ public class NotesContractProviderModel {
 
     }
 
-    public static class TodoClass implements BaseColumns {
-        public static final String TABLE_NAME = "Todo";
-        public static final String _id = BaseColumns._ID;
-        public static final String COLUMN_TODO_TITLE = "todo_title";
-        public static final String COLUMN_TODO_DETAILS = "todo_details";
-        public static final String COLUMN_TODO_CURRENT_DATE = "todo_current_date";
-        public static final String COLUMN_TODO_CURRENT_TIME = "todo_current_time";
-        public static final String COLUMN_TODO_SELECTED_DATE = "todo_selected_date";
-        public static final String COLUMN_TODO_SELECTED_TIME = "todo_selected_time";
-
-
-        public static final String PATH_ACCOUNT = TABLE_NAME;
-
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_ACCOUNT);
-
-    }
-
 }

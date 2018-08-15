@@ -21,9 +21,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle mActionBarDrawerToggle;
     NavigationView mNavigationView;
-    TextView mNotesTxt,mToDoList,mAlarmTxt;
+    TextView mNotesTxt,mToDoList,mAlarmTxt,mPictureStory;
     AppCompatImageView appCompatImageView;
-
     public static boolean mMyAlarm=false;
 
     @Override
@@ -39,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         mNotesTxt=(TextView) findViewById(R.id.notes_txt_id);
         mAlarmTxt=(TextView) findViewById(R.id.alarm_txt_id);
+        mPictureStory=(TextView) findViewById(R.id.picturestories_txt_id);
 
         mToDoList=(TextView) findViewById(R.id.todolist_txt_id);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -78,7 +78,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(alarmIntent);
 
             }
-        });    }
+        });
+        mPictureStory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pictureintent = new Intent(MainActivity.this,PictureStory.class);
+                startActivity(pictureintent);
+
+            }
+        });
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -106,5 +115,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return false;
     }
+
+
 
 }
